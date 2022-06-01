@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_laundries">
+
+    <fragment
+        android:id="@+id/navigation_laundries"
+        android:name="com.yuliia_koba.clean_digital_mobile.fragments.LaundriesFragment"
+        android:label="@string/laundries"
+        tools:layout="@layout/fragment_laundries" >
+        <action
+            android:id="@+id/action_navigation_laundries_to_navigation_user_info"
+            app:destination="@id/navigation_user_info" />
+        <action
+            android:id="@+id/action_navigation_laundries_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_laundries_to_navigation_events"
+            app:destination="@id/navigation_events" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.yuliia_koba.clean_digital_mobile.fragments.EventsFragment"
+        android:label="@string/events"
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_laundries"
+            app:destination="@id/navigation_laundries" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_user_info"
+            app:destination="@id/navigation_user_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user_info"
+        android:name="com.yuliia_koba.clean_digital_mobile.fragments.UserInfoFragment"
+        android:label="@string/user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_navigation_user_info_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_user_info_to_navigation_laundries"
+            app:destination="@id/navigation_laundries" />
+        <action
+            android:id="@+id/action_navigation_user_info_to_navigation_events"
+            app:destination="@id/navigation_events" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.yuliia_koba.clean_digital_mobile.fragments.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_laundries"
+            app:destination="@id/navigation_laundries" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_user_info"
+            app:destination="@id/navigation_user_info" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_events"
+            app:destination="@id/navigation_events" />
+    </fragment>
+</navigation>
