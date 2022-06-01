@@ -3,17 +3,41 @@ package com.yuliia_koba.clean_digital_mobile.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class LaundryPagination extends Pagination{
+public class LaundryPagination {
     @SerializedName("page")
     @Expose
-    private List<Laundry> content;
+    protected int page;
+    @SerializedName("size")
+    @Expose
+    protected int size;
+    @SerializedName("totalPages")
+    @Expose
+    protected int totalPages;
+    @SerializedName("totalElements")
+    @Expose
+    protected int totalElements;
+    @SerializedName("content")
+    @Expose
+    private Laundry[] content;
 
     public LaundryPagination(int page, int size,
                              int totalPages, int totalElements,
-                             List<Laundry> content) {
-        super(page, size, totalPages, totalElements);
+                             Laundry[] content) {
         this.content = content;
+        this.page = page;
+        this.size = size;
+        this.totalElements = totalElements;
+        this.totalPages = totalPages;
+    }
+
+    public Laundry[] getContent() {
+        return content;
+    }
+
+    public int getTotalPages() {
+        return totalPages;
     }
 }

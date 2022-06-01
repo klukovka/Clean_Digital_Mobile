@@ -3,58 +3,55 @@ package com.yuliia_koba.clean_digital_mobile.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.yuliia_koba.clean_digital_mobile.R;
+import com.yuliia_koba.clean_digital_mobile.models.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.Status;
+import com.yuliia_koba.clean_digital_mobile.view_models.LaundriesViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link LaundriesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class LaundriesFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public LaundriesFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LaundriesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LaundriesFragment newInstance(String param1, String param2) {
-        LaundriesFragment fragment = new LaundriesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private LaundriesViewModel viewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        viewModel = ViewModelProviders.of(this).get(LaundriesViewModel.class);
+
+        viewModel.getLaundries().observe(this, new Observer<Laundry[]>() {
+            @Override
+            public void onChanged(Laundry[] laundries) {
+
+            }
+        });
+
+        viewModel.getPage().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                viewModel.loadLaundries(integer,getContext() );
+            }
+        });
+
+
+        viewModel.getErrorMessage().observe(this, s -> {
+            Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+        });
+
+        viewModel.getStatus().observe(this, new Observer<Status>() {
+            @Override
+            public void onChanged(Status status) {
+
+            }
+        });
+
     }
 
     @Override

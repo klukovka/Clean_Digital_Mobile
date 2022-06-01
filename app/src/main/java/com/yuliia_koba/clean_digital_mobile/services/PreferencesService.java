@@ -35,4 +35,11 @@ public class PreferencesService {
         }
         return settings.getString( TOKEN, "" );
     }
+
+    public static String getHeader(){
+        if( settings == null ){
+            init();
+        }
+        return "Bearer " + settings.getString( TOKEN, "" );
+    }
 }
