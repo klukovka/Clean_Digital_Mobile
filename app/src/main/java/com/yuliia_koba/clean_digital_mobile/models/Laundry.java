@@ -37,5 +37,25 @@ public class Laundry {
         this.user = user;
         this.userId = userId;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getLaundryId() {
+        return laundryId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 }
 
