@@ -38,8 +38,8 @@ public class Laundry {
         this.userId = userId;
     }
 
-    public User getUser() {
-        return user;
+    public String getEmail() {
+        return user.getEmail();
     }
 
     public String getLaundryId() {

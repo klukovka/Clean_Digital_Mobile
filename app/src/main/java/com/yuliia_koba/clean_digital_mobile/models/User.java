@@ -15,4 +15,8 @@ public class User {
         this.email = email;
         this.userId = userId;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }
