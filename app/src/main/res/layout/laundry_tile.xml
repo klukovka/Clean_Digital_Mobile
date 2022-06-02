@@ -14,9 +14,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="56dp"
+            android:layout_width="48dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             app:srcCompat="@drawable/ic_baseline_wash_24" />
 
@@ -145,7 +144,7 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="56dp"
+            android:layout_width="24dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_arrow_forward" />
 

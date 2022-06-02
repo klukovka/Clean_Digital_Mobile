@@ -116,4 +116,9 @@ public class LaundriesViewModel extends AndroidViewModel {
 
         }
     }
+
+    public void restart(){
+        page.postValue(0);
+        isFirst = true;
+    }
 }
