@@ -29,4 +29,16 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="wash_machines">Washing Machines</string>
+    <string name="washing_machine">Washing machine</string>
+    <string name="temperature">Temperature</string>
+    <string name="mode">Mode</string>
+    <string name="additional_mode">Additional mode</string>
+    <string name="time_begin">Time begin</string>
+    <string name="time_end">Time end</string>
+    <string name="paid_status">Paid status</string>
+    <string name="paid_bonuses">Paid bonuses</string>
+    <string name="rating">Rating</string>
+    <string name="paid_money">Paid money</string>
+    <string name="pay">Pay</string>
+    <string name="take">Take</string>
 </resources>
