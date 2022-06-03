@@ -19,9 +19,13 @@ import com.yuliia_koba.clean_digital_mobile.models.actions.EventActions;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
 import com.yuliia_koba.clean_digital_mobile.utils.Utils;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder>{
     private final LayoutInflater inflater;
