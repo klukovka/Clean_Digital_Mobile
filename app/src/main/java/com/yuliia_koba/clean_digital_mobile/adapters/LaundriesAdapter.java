@@ -1,7 +1,6 @@
 package com.yuliia_koba.clean_digital_mobile.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yuliia_koba.clean_digital_mobile.R;
-import com.yuliia_koba.clean_digital_mobile.models.Laundry;
-import com.yuliia_koba.clean_digital_mobile.models.LaundryActions;
-
-import java.util.List;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.actions.LaundryActions;
 
 public class LaundriesAdapter extends RecyclerView.Adapter<LaundriesAdapter.ViewHolder>{
     private final LayoutInflater inflater;

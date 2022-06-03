@@ -9,13 +9,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
-import com.yuliia_koba.clean_digital_mobile.models.AuthMeta;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
-import com.yuliia_koba.clean_digital_mobile.models.LoginRequest;
-import com.yuliia_koba.clean_digital_mobile.models.RegisterRequest;
+import com.yuliia_koba.clean_digital_mobile.models.api.RegisterRequest;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.services.AuthService;
-import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

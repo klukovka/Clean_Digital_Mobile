@@ -2,7 +2,6 @@ package com.yuliia_koba.clean_digital_mobile.view_models;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -11,17 +10,12 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
-import com.yuliia_koba.clean_digital_mobile.models.Laundry;
-import com.yuliia_koba.clean_digital_mobile.models.LaundryPagination;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.pagination.LaundryPagination;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.services.LaundryService;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
 import com.yuliia_koba.clean_digital_mobile.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

@@ -1,9 +1,10 @@
-package com.yuliia_koba.clean_digital_mobile.models;
+package com.yuliia_koba.clean_digital_mobile.models.pagination;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
 
-public class EventPagination {
+public class LaundryPagination {
     @SerializedName("page")
     @Expose
     protected int page;
@@ -18,11 +19,11 @@ public class EventPagination {
     protected int totalElements;
     @SerializedName("content")
     @Expose
-    private Event[] content;
+    private Laundry[] content;
 
-    public EventPagination(int page, int size,
+    public LaundryPagination(int page, int size,
                              int totalPages, int totalElements,
-                             Event[] content) {
+                             Laundry[] content) {
         this.content = content;
         this.page = page;
         this.size = size;
@@ -30,7 +31,7 @@ public class EventPagination {
         this.totalPages = totalPages;
     }
 
-    public Event[] getContent() {
+    public Laundry[] getContent() {
         return content;
     }
 

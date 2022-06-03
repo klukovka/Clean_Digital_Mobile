@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,16 +17,11 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuliia_koba.clean_digital_mobile.R;
-import com.yuliia_koba.clean_digital_mobile.activities.LoginActivity;
 import com.yuliia_koba.clean_digital_mobile.activities.WashMachinesActivity;
 import com.yuliia_koba.clean_digital_mobile.adapters.LaundriesAdapter;
-import com.yuliia_koba.clean_digital_mobile.models.Laundry;
-import com.yuliia_koba.clean_digital_mobile.models.LaundryActions;
-import com.yuliia_koba.clean_digital_mobile.models.Status;
-import com.yuliia_koba.clean_digital_mobile.models.User;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.actions.LaundryActions;
 import com.yuliia_koba.clean_digital_mobile.view_models.LaundriesViewModel;
-
-import java.time.Instant;
 
 
 public class LaundriesFragment extends Fragment {

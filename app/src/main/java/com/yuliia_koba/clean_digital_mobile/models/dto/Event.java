@@ -1,4 +1,4 @@
-package com.yuliia_koba.clean_digital_mobile.models;
+package com.yuliia_koba.clean_digital_mobile.models.dto;
 
 import java.time.LocalDateTime;
 

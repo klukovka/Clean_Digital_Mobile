@@ -2,7 +2,6 @@ package com.yuliia_koba.clean_digital_mobile.view_models;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -10,9 +9,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
-import com.yuliia_koba.clean_digital_mobile.models.AuthMeta;
+import com.yuliia_koba.clean_digital_mobile.models.dto.AuthMeta;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
-import com.yuliia_koba.clean_digital_mobile.models.LoginRequest;
+import com.yuliia_koba.clean_digital_mobile.models.api.LoginRequest;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.services.AuthService;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;

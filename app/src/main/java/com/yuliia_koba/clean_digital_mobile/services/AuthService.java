@@ -1,9 +1,9 @@
 package com.yuliia_koba.clean_digital_mobile.services;
 
-import com.yuliia_koba.clean_digital_mobile.models.AuthMeta;
-import com.yuliia_koba.clean_digital_mobile.models.LoginRequest;
-import com.yuliia_koba.clean_digital_mobile.models.RegisterRequest;
-import com.yuliia_koba.clean_digital_mobile.models.RestorePasswordRequest;
+import com.yuliia_koba.clean_digital_mobile.models.dto.AuthMeta;
+import com.yuliia_koba.clean_digital_mobile.models.api.LoginRequest;
+import com.yuliia_koba.clean_digital_mobile.models.api.RegisterRequest;
+import com.yuliia_koba.clean_digital_mobile.models.api.RestorePasswordRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

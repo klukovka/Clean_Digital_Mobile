@@ -1,7 +1,8 @@
-package com.yuliia_koba.clean_digital_mobile.models;
+package com.yuliia_koba.clean_digital_mobile.models.pagination;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.yuliia_koba.clean_digital_mobile.models.dto.WashMachine;
 
 
 public class WashMachinePagination {

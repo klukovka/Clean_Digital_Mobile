@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
-import com.yuliia_koba.clean_digital_mobile.models.RestorePasswordRequest;
+import com.yuliia_koba.clean_digital_mobile.models.api.RestorePasswordRequest;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.services.AuthService;
 

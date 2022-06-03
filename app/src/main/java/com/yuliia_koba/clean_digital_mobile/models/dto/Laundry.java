@@ -1,7 +1,8 @@
-package com.yuliia_koba.clean_digital_mobile.models;
+package com.yuliia_koba.clean_digital_mobile.models.dto;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.yuliia_koba.clean_digital_mobile.models.dto.User;
 
 public class Laundry {
     static public final String LAUNDRY_ID = "LAUNDRY_ID";

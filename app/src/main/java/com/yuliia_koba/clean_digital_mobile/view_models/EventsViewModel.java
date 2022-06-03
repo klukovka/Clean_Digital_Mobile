@@ -10,8 +10,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
-import com.yuliia_koba.clean_digital_mobile.models.Event;
-import com.yuliia_koba.clean_digital_mobile.models.EventPagination;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
+import com.yuliia_koba.clean_digital_mobile.models.pagination.EventPagination;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.services.EventService;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;

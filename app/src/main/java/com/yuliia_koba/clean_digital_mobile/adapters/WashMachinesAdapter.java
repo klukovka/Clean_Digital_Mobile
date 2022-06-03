@@ -8,12 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yuliia_koba.clean_digital_mobile.R;
-import com.yuliia_koba.clean_digital_mobile.models.WashMachine;
+import com.yuliia_koba.clean_digital_mobile.models.dto.WashMachine;
 
 public class WashMachinesAdapter extends RecyclerView.Adapter<WashMachinesAdapter.ViewHolder>{
     private final LayoutInflater inflater;

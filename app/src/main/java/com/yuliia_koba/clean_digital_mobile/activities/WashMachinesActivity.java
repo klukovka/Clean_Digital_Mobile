@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -15,11 +14,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.adapters.WashMachinesAdapter;
-import com.yuliia_koba.clean_digital_mobile.models.Laundry;
-import com.yuliia_koba.clean_digital_mobile.models.WashMachine;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.dto.WashMachine;
 import com.yuliia_koba.clean_digital_mobile.view_models.WashMachinesViewModel;
-
-import java.util.ArrayList;
 
 public class WashMachinesActivity extends AppCompatActivity {
 
