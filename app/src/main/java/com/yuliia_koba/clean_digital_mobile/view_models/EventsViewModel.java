@@ -104,7 +104,6 @@ public class EventsViewModel extends AndroidViewModel {
                         @Override
                         public void onFailure(Call<EventPagination> call, Throwable t) {
                             status.postValue(Status.ERROR);
-                            Log.v("TAG", t.getLocalizedMessage());
                             errorMessage.postValue(context.getString(R.string.something_went_wrong));
                         }
                     });
@@ -112,8 +111,27 @@ public class EventsViewModel extends AndroidViewModel {
         }
     }
 
+    public void takeEvent(String eventId, Context context){
+        status.postValue(Status.LOADING);
+
+        eventService.takeEvent(eventId, PreferencesService.getHeader())
+                .enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        restart();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        status.postValue(Status.ERROR);
+                        errorMessage.postValue(context.getString(R.string.something_went_wrong));
+                    }
+                });
+    }
+
     public void restart(){
         page.postValue(0);
         isFirst = true;
+        events.postValue(new Event[]{});
     }
 }

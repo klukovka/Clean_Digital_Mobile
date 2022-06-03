@@ -90,7 +90,7 @@ public class EventsFragment extends Fragment {
 
         @Override
         public void takeEvent(String eventId) {
-
+            viewModel.takeEvent(eventId, getActivity());
         }
 
         @Override
