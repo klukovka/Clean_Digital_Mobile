@@ -1,6 +1,7 @@
 package com.yuliia_koba.clean_digital_mobile.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +71,7 @@ public class LaundriesAdapter extends RecyclerView.Adapter<LaundriesAdapter.View
 
             view.setOnClickListener(view1 -> laundryActions
                     .getWashMachines(laundries[getAdapterPosition()]
-                    .getLaundryId()));
+                            .getLaundryId()));
         }
     }
 }

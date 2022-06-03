@@ -31,6 +31,7 @@ public class WashMachinesViewModel extends AndroidViewModel {
     private MutableLiveData<String> errorMessage;
     private MutableLiveData<WashMachine[]> washMachines;
     private final MutableLiveData<Integer> page = new MutableLiveData<>();
+    private String laundryId = "";
     private int totalPages = 0;
     private Boolean isFirst = true;
 
@@ -76,11 +77,15 @@ public class WashMachinesViewModel extends AndroidViewModel {
         return page;
     }
 
-    public void loadWashMachines(int pageNumber, String laundryId, Context context){
+    public void setLaundryId(String laundryId) {
+        this.laundryId = laundryId;
+    }
+
+    public void loadWashMachines(int pageNumber, Context context){
         if (isFirst || pageNumber < totalPages){
             statusMutableLiveData.postValue(Status.LOADING);
 
-            laundryService.getWashMachines(pageNumber, PreferencesService.getHeader(), laundryId)
+            laundryService.getWashMachines(laundryId, pageNumber, PreferencesService.getHeader())
                     .enqueue(new Callback<WashMachinePagination>() {
                         @Override
                         public void onResponse(Call<WashMachinePagination> call, Response<WashMachinePagination> response) {

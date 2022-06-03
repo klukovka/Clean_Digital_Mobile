@@ -1,12 +1,14 @@
 package com.yuliia_koba.clean_digital_mobile.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,19 +40,19 @@ public class WashMachinesAdapter extends RecyclerView.Adapter<WashMachinesAdapte
         holder.id.setText(washMachine.getWashMachineId());
         holder.model.setText(washMachine.getModel());
         holder.manufacturer.setText(washMachine.getManufacturer());
-        holder.capacity.setText(washMachine.getCapacity());
-        holder.powerUsage.setText(washMachine.getPowerUsage());
-        holder.spinningSpeed.setText(washMachine.getSpinningSpeed());
+        holder.capacity.setText(String.valueOf(washMachine.getCapacity()));
+        holder.powerUsage.setText(String.valueOf(washMachine.getPowerUsage()));
+        holder.spinningSpeed.setText(String.valueOf(washMachine.getSpinningSpeed()));
 
         holder.isWashing.setText(washMachine.isWashing()?R.string.yes:R.string.no);
         holder.isWorking.setText(washMachine.isWorking()?R.string.yes:R.string.no);
 
         if (washMachine.isWashing()){
-            holder.image.setColorFilter(R.color.yellow);
+            holder.image.setBackgroundColor(Color.YELLOW);
         } else if (!washMachine.isWorking()) {
-            holder.image.setColorFilter(R.color.red);
+            holder.image.setBackgroundColor(Color.RED);
         } else {
-            holder.image.setColorFilter(R.color.green);
+            holder.image.setBackgroundColor(Color.GREEN);
         }
     }
 

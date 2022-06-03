@@ -19,7 +19,7 @@ public interface LaundryService {
 
     @GET("/laundry/all-washing-machines-users/{laundryId}")
     Call<WashMachinePagination> getWashMachines(
+            @Path("laundryId") String laundryId,
             @Query("page") int page,
-            @Header("Authorization") String token,
-            @Path("laundryId") String laundryId);
+            @Header("Authorization") String token);
 }

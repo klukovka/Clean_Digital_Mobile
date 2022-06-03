@@ -19,7 +19,14 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".activities.WashMachinesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity"
+            android:label="@string/wash_machines">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
