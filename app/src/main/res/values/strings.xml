@@ -44,4 +44,14 @@
     <string name="rate">Rate</string>
     <string name="paid">Paid</string>
     <string name="not_paid">Not paid</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mark_the_process">Mark the process</string>
+    <string name="_1_horrible">1 (Horrible)</string>
+    <string name="_2_bad">2 (Bad)</string>
+    <string name="_3_normal">3 (Normal)</string>
+    <string name="_4_very_good">4 (Very good)</string>
+    <string name="_5_excellent">5 (Excellent)</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
 </resources>

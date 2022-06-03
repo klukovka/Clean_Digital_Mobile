@@ -152,7 +152,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
             rateButton = view.findViewById(R.id.rate_button);
             progressBar = view.findViewById(R.id.event_progress);
 
-            takeButton.setOnClickListener(view1 -> eventActions.takeEvent(events[getAdapterPosition()].eventId));
+            takeButton.setOnClickListener(view1 ->
+                    eventActions.takeEvent(events[getAdapterPosition()].eventId));
+
+            rateButton.setOnClickListener(view1 ->
+                    eventActions.rateEvent(events[getAdapterPosition()].eventId));
         }
     }
 }

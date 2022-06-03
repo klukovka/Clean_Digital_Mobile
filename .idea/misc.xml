@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_events.xml" value="0.20380434782608695" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.20380434782608695" />
         <entry key="app/src/main/res/layout/fragment_laundries.xml" value="0.20380434782608695" />
+        <entry key="app/src/main/res/layout/fragment_rating_dialog.xml" value="0.24320652173913043" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.20380434782608695" />
         <entry key="app/src/main/res/layout/fragment_user_info.xml" value="0.20380434782608695" />
         <entry key="app/src/main/res/layout/laundry_tile.xml" value="0.25" />

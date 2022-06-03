@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
+import com.yuliia_koba.clean_digital_mobile.models.api.RateEventRequest;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
 import com.yuliia_koba.clean_digital_mobile.models.pagination.EventPagination;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
@@ -115,6 +116,24 @@ public class EventsViewModel extends AndroidViewModel {
         status.postValue(Status.LOADING);
 
         eventService.takeEvent(eventId, PreferencesService.getHeader())
+                .enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        restart();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        status.postValue(Status.ERROR);
+                        errorMessage.postValue(context.getString(R.string.something_went_wrong));
+                    }
+                });
+    }
+
+    public void rateEvent(String eventId, int mark, Context context){
+        status.postValue(Status.LOADING);
+
+        eventService.rateEvent(eventId, new RateEventRequest(mark), PreferencesService.getHeader())
                 .enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {

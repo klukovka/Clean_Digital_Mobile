@@ -18,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.adapters.EventsAdapter;
 import com.yuliia_koba.clean_digital_mobile.models.actions.EventActions;
+import com.yuliia_koba.clean_digital_mobile.models.actions.RateAction;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
 import com.yuliia_koba.clean_digital_mobile.view_models.EventsViewModel;
 
@@ -95,7 +96,12 @@ public class EventsFragment extends Fragment {
 
         @Override
         public void rateEvent(String eventId) {
-
+            new RatingDialogFragment(new RateAction() {
+                @Override
+                public void rate(int mark) {
+                    viewModel.rateEvent(eventId, mark, getActivity());
+                }
+            }).show(getParentFragmentManager(), "RATING");
         }
     }
 }
