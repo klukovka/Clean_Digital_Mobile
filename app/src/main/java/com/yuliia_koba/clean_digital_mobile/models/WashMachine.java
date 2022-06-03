@@ -37,6 +37,38 @@ public class WashMachine {
         this.isWashing = isWashing;
         this.isWorking = isWorking;
     }
+
+    public String getWashMachineId() {
+        return washMachineId;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getPowerUsage() {
+        return powerUsage;
+    }
+
+    public int getSpinningSpeed() {
+        return spinningSpeed;
+    }
+
+    public boolean isWashing() {
+        return isWashing;
+    }
+
+    public boolean isWorking() {
+        return isWorking;
+    }
 }
 
 

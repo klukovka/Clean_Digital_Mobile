@@ -26,4 +26,6 @@
     <string name="spinning_speed">Spinning speed</string>
     <string name="is_working">Is working</string>
     <string name="is_washing">Is washing</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

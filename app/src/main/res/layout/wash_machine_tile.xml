@@ -13,11 +13,11 @@
         android:elevation="8dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/wash_machine_image"
             android:layout_width="56dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_baseline_local_laundry_service_24"
-            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             app:tint="@color/design_default_color_primary" />
 
         <LinearLayout
