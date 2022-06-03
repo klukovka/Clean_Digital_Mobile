@@ -15,11 +15,9 @@ import com.yuliia_koba.clean_digital_mobile.models.WashMachine;
 
 public class WashMachinesAdapter extends RecyclerView.Adapter<WashMachinesAdapter.ViewHolder>{
     private final LayoutInflater inflater;
-    private final Context context;
     private WashMachine[]washMachines;
 
     public WashMachinesAdapter(Context context, WashMachine[] washMachines) {
-        this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.washMachines = washMachines;
     }

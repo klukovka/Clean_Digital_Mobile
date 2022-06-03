@@ -11,18 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.LaundryActions;
 
 import java.util.List;
 
 public class LaundriesAdapter extends RecyclerView.Adapter<LaundriesAdapter.ViewHolder>{
     private final LayoutInflater inflater;
-    private final Context context;
+    private final LaundryActions laundryActions;
     private Laundry[]laundries;
 
-    public LaundriesAdapter(Context context, Laundry[] laundries) {
-        this.context = context;
+    public LaundriesAdapter(Context context, Laundry[] laundries, LaundryActions laundryActions) {
         this.inflater = LayoutInflater.from(context);
         this.laundries = laundries;
+        this.laundryActions = laundryActions;
     }
 
     @NonNull
@@ -66,6 +67,10 @@ public class LaundriesAdapter extends RecyclerView.Adapter<LaundriesAdapter.View
             address = view.findViewById(R.id.laundry_address);
             phone = view.findViewById(R.id.laundry_phone);
             email = view.findViewById(R.id.laundry_email);
+
+            view.setOnClickListener(view1 -> laundryActions
+                    .getWashMachines(laundries[getAdapterPosition()]
+                    .getLaundryId()));
         }
     }
 }

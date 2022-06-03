@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Laundry {
+    static public final String LAUNDRY_ID = "LAUNDRY_ID";
+
     @SerializedName("name")
     @Expose
     private String name;

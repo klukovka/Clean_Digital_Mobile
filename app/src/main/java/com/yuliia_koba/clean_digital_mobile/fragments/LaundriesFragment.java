@@ -1,5 +1,6 @@
 package com.yuliia_koba.clean_digital_mobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,11 +20,15 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.activities.LoginActivity;
+import com.yuliia_koba.clean_digital_mobile.activities.WashMachinesActivity;
 import com.yuliia_koba.clean_digital_mobile.adapters.LaundriesAdapter;
 import com.yuliia_koba.clean_digital_mobile.models.Laundry;
+import com.yuliia_koba.clean_digital_mobile.models.LaundryActions;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.models.User;
 import com.yuliia_koba.clean_digital_mobile.view_models.LaundriesViewModel;
+
+import java.time.Instant;
 
 
 public class LaundriesFragment extends Fragment {
@@ -49,7 +54,7 @@ public class LaundriesFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_laundries, container, false);
 
-        adapter = new LaundriesAdapter(view.getContext(), new Laundry[]{});
+        adapter = new LaundriesAdapter(view.getContext(), new Laundry[]{}, new MainLaundryActions());
 
         recyclerView = view.findViewById(R.id.laundries_RecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -93,5 +98,14 @@ public class LaundriesFragment extends Fragment {
     public void onStart() {
         super.onStart();
         reloadButton.setOnClickListener(view -> viewModel.restart());
+    }
+
+    private class MainLaundryActions implements LaundryActions{
+        @Override
+        public void getWashMachines(String laundryId) {
+            Intent intent = new Intent(getActivity(), WashMachinesActivity.class);
+            intent.putExtra(Laundry.LAUNDRY_ID, laundryId);
+            startActivity(intent);
+        }
     }
 }
