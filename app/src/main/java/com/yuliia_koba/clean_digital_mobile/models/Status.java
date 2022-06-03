@@ -4,5 +4,6 @@ public enum Status {
     INITIAL,
     LOADING,
     SUCCESS,
+    SAVED,
     ERROR;
 }
