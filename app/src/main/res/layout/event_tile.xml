@@ -70,7 +70,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/washMachine"
+                        android:id="@+id/event_washMachine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -93,7 +93,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/temperature"
+                        android:id="@+id/event_temperature"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -116,7 +116,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/spinning"
+                        android:id="@+id/event_spinning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -139,7 +139,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/mode"
+                        android:id="@+id/event_mode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -155,6 +155,7 @@
                     android:paddingBottom="8dp">
 
                     <TextView
+                        android:id="@+id/event_additionalMode_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/additional_mode"
@@ -162,7 +163,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/additionalMode"
+                        android:id="@+id/event_additionalMode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -187,7 +188,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/timeBegin"
+                        android:id="@+id/event_timeBegin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -205,6 +206,7 @@
                     android:paddingBottom="8dp">
 
                     <TextView
+                        android:id="@+id/event_timeEnd_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/time_end"
@@ -212,7 +214,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/timeEnd"
+                        android:id="@+id/event_timeEnd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -237,7 +239,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/paidStatus"
+                        android:id="@+id/event_paidStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -262,7 +264,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/paidBonuses"
+                        android:id="@+id/event_paidBonuses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -287,7 +289,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/paidMoney"
+                        android:id="@+id/event_paidMoney"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -305,6 +307,7 @@
                     android:paddingBottom="8dp">
 
                     <TextView
+                        android:id="@+id/event_rating_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rating"
@@ -312,7 +315,7 @@
                         android:textColor="@color/design_default_color_primary_variant"/>
 
                     <TextView
-                        android:id="@+id/rating"
+                        android:id="@+id/event_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/id"
@@ -335,21 +338,22 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/pay_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-
-            android:text="@string/pay"
-            />
-        <Button
             android:id="@+id/take_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/take" />
+
+        <Button
+            android:id="@+id/rate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+
+            android:text="@string/rate"
+            />
     </LinearLayout>
 
 </RelativeLayout>
