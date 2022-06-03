@@ -18,11 +18,24 @@
         android:theme="@style/Theme.Clean_Digital_Mobile"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.CreateEventActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.QRCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme" />
+        <activity
             android:name=".activities.WashMachinesActivity"
             android:exported="false"
-            android:parentActivityName=".activities.MainActivity"
-            android:label="@string/wash_machines">
-
+            android:label="@string/wash_machines"
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
@@ -57,7 +70,7 @@
         </activity>
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.actions"

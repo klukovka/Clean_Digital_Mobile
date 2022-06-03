@@ -1,5 +1,6 @@
 package com.yuliia_koba.clean_digital_mobile.services;
 
+import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
 import com.yuliia_koba.clean_digital_mobile.models.pagination.EventPagination;
 import com.yuliia_koba.clean_digital_mobile.models.api.PayForEventRequest;
 import com.yuliia_koba.clean_digital_mobile.models.api.RateEventRequest;
@@ -33,5 +34,10 @@ public interface EventService {
     Call<Void> rateEvent(
             @Path("eventId") String eventId,
             @Body RateEventRequest body,
+            @Header("Authorization") String token);
+
+    @POST("/event/by-id/{eventId}")
+    Call<Event> getEvent(
+            @Path("eventId") String eventId,
             @Header("Authorization") String token);
 }

@@ -54,4 +54,10 @@
     <string name="_5_excellent">5 (Excellent)</string>
     <string name="cancel">Cancel</string>
     <string name="send">Send</string>
+    <string name="scan_qr">Scan QR-code</string>
+    <string name="pay_for_event">Pay for event</string>
+    <string name="costs">Costs</string>
+    <string name="time">Time</string>
+    <string name="bonuses">Bonuses</string>
+    <string name="left_bonuses">Left bonuses</string>
 </resources>
