@@ -1,6 +1,7 @@
 package com.yuliia_koba.clean_digital_mobile.models.dto;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Event {
     public final String eventId;
@@ -12,8 +13,8 @@ public class Event {
     public final String additionalModeId;
     public final AdditionalMode additionalMode;
     public final String clientId;
-    public final LocalDateTime timeBegin;
-    public final LocalDateTime timeEnd;
+    public final Date timeBegin;
+    public final Date timeEnd;
     public final Boolean paidStatus;
     public final Integer paidBonuses;
     public final Integer paidMoney;
@@ -24,7 +25,7 @@ public class Event {
                  Integer temperature, Integer spinning,
                  String modeId, Mode mode, String additionalModeId,
                  AdditionalMode additionalMode, String clientId,
-                 LocalDateTime timeBegin, LocalDateTime timeEnd,
+                 Date timeBegin, Date timeEnd,
                  Boolean paidStatus, Integer paidBonuses,
                  Integer paidMoney, Boolean taken,
                  Integer rating) {

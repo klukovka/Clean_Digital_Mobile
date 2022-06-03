@@ -98,8 +98,6 @@ public class LaundriesFragment extends Fragment {
         public void getWashMachines(String laundryId) {
             Intent intent = new Intent(getActivity(), WashMachinesActivity.class);
             intent.putExtra(Laundry.LAUNDRY_ID, laundryId);
-            Log.v("ID", intent.getStringExtra(Laundry.LAUNDRY_ID));
-            Log.v("ID", laundryId);
             startActivity(intent);
         }
     }

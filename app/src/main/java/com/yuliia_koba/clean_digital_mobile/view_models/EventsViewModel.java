@@ -2,6 +2,7 @@ package com.yuliia_koba.clean_digital_mobile.view_models;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -103,6 +104,7 @@ public class EventsViewModel extends AndroidViewModel {
                         @Override
                         public void onFailure(Call<EventPagination> call, Throwable t) {
                             status.postValue(Status.ERROR);
+                            Log.v("TAG", t.getLocalizedMessage());
                             errorMessage.postValue(context.getString(R.string.something_went_wrong));
                         }
                     });

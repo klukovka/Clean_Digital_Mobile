@@ -8,8 +8,10 @@ import androidx.core.content.res.TypedArrayUtils;
 import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class Utils {
@@ -26,7 +28,12 @@ public class Utils {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static int getMinutes(LocalDateTime dateTime){
-        return (int) (dateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()/60000);
+    public static int getMinutesBetweenNow(Date date){
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime converted = date.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
+
+        return Math.toIntExact(ChronoUnit.MINUTES.between(converted, now));
     }
 }
