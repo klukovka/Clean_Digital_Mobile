@@ -63,4 +63,6 @@
     <string name="sale">Sale</string>
     <string name="edit">Edit</string>
     <string name="update_password">Update password</string>
+    <string name="save">Save</string>
+    <string name="edit_info">Edit info</string>
 </resources>

@@ -1,11 +1,14 @@
 package com.yuliia_koba.clean_digital_mobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuliia_koba.clean_digital_mobile.R;
+import com.yuliia_koba.clean_digital_mobile.activities.EditClientActivity;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Client;
 import com.yuliia_koba.clean_digital_mobile.view_models.EventsViewModel;
@@ -23,7 +27,7 @@ import com.yuliia_koba.clean_digital_mobile.view_models.UserInfoViewModel;
 
 public class UserInfoFragment extends Fragment {
 
-    private UserInfoViewModel viewModel;
+    public UserInfoViewModel viewModel;
 
     TextView name, email, phone, bonuses, sale;
     ProgressBar progressBar;
@@ -80,15 +84,11 @@ public class UserInfoFragment extends Fragment {
         editPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
 
-        editUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        editUser.setOnClickListener(view -> startActivity(new Intent(getActivity(), EditClientActivity.class)));
 
-            }
-        });
     }
+
 }

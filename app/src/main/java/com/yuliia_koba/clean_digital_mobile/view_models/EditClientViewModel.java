@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yuliia_koba.clean_digital_mobile.models.Constants;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
+import com.yuliia_koba.clean_digital_mobile.models.api.UpdateClientRequest;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Client;
 import com.yuliia_koba.clean_digital_mobile.services.ClientService;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
@@ -20,14 +21,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserInfoViewModel extends AndroidViewModel {
+public class EditClientViewModel extends AndroidViewModel {
     private final ClientService clientService;
 
     private MutableLiveData<Status> statusMutableLiveData;
     private MutableLiveData<String> errorMessage;
     private MutableLiveData<Client> client;
 
-    public UserInfoViewModel(@NonNull Application application) {
+    public EditClientViewModel(@NonNull Application application) {
         super(application);
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
@@ -64,7 +65,7 @@ public class UserInfoViewModel extends AndroidViewModel {
         return client;
     }
 
-    public void init(){
+    private void init(){
         statusMutableLiveData.postValue(Status.LOADING);
 
         clientService.getPersonalInfo(PreferencesService.getHeader())
@@ -79,6 +80,27 @@ public class UserInfoViewModel extends AndroidViewModel {
 
                     @Override
                     public void onFailure(Call<Client> call, Throwable t) {
+                        statusMutableLiveData.postValue(Status.ERROR);
+                        errorMessage.postValue(t.getLocalizedMessage());
+                    }
+                });
+    }
+
+    public void save(String email, String name, String phone){
+        statusMutableLiveData.postValue(Status.LOADING);
+
+        clientService.updateClientInfo(PreferencesService.getHeader(),
+                new UpdateClientRequest(email, name, phone))
+                .enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        if (response.isSuccessful()){
+                            statusMutableLiveData.postValue(Status.SAVED);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
                         statusMutableLiveData.postValue(Status.ERROR);
                         errorMessage.postValue(t.getLocalizedMessage());
                     }
