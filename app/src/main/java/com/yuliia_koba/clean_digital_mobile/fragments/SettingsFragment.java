@@ -1,5 +1,6 @@
 package com.yuliia_koba.clean_digital_mobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import com.yuliia_koba.clean_digital_mobile.R;
+import com.yuliia_koba.clean_digital_mobile.activities.LoginActivity;
+import com.yuliia_koba.clean_digital_mobile.activities.RestorePasswordActivity;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
 
 public class SettingsFragment extends Fragment {
@@ -53,6 +56,20 @@ public class SettingsFragment extends Fragment {
                 PreferencesService.setLocale("en");
             }
             getActivity().recreate();
+        });
+
+        logout.setOnClickListener(view -> {
+            PreferencesService.clear();
+            Intent intent = new Intent(view.getContext(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();
+        });
+        
+        delete.setOnClickListener(view -> {
+            PreferencesService.clear();
+            Intent intent = new Intent(view.getContext(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();
         });
     }
 }

@@ -62,4 +62,13 @@ public class PreferencesService {
         editor.putString(LOCALE, locale);
         editor.commit();
     }
+
+    public static void clear(){
+        if (settings == null){
+            init();
+        }
+
+        editor.clear();
+        editor.commit();
+    }
 }
