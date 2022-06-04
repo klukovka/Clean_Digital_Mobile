@@ -29,12 +29,14 @@ public class CreateEventViewModel extends AndroidViewModel {
     private final EventService eventService;
     private final ClientService clientService;
     private Integer bonuses = 0;
+    private Integer time = 0;
+    private Integer costs = 0;
     private String eventId = "";
 
-    private MutableLiveData<Status> status;
-    private MutableLiveData<String> errorMessage;
-    private MutableLiveData<Event> event;
-
+    private MutableLiveData<Status> status = new MutableLiveData<>();
+    private MutableLiveData<String> errorMessage= new MutableLiveData<>();
+    private MutableLiveData<Integer> finalCosts = new MutableLiveData<>();
+    private MutableLiveData<Integer> finalTime = new MutableLiveData<>();
     private MutableLiveData<Integer> leftBonuses = new MutableLiveData<>();
 
     public CreateEventViewModel(@NonNull Application application) {
@@ -60,36 +62,27 @@ public class CreateEventViewModel extends AndroidViewModel {
                 .create(ClientService.class);
     }
 
-    void setBonuses(int bonus){
+    public void setBonuses(int bonus){
         leftBonuses.postValue(bonuses - bonus);
+        finalCosts.postValue(costs - bonus);
     }
 
     public LiveData<Integer> getLeftBonuses(){
         return leftBonuses;
     }
+    public LiveData<Integer> getCosts(){
+        return finalCosts;
+    }
+    public LiveData<Integer> getTime(){
+        return finalTime;
+    }
 
     public LiveData<Status> getStatus() {
-        if (status == null){
-            status = new MutableLiveData<>();
-            status.postValue(Status.LOADING);
-        }
         return status;
     }
 
     public MutableLiveData<String> getErrorMessage() {
-        if (errorMessage == null){
-            errorMessage = new MutableLiveData<>();
-        }
         return errorMessage;
-    }
-
-    public MutableLiveData<Event> getEvent(String eventId, Context context){
-        if (event == null){
-            event = new MutableLiveData<>();
-            init(eventId, context);
-        }
-
-        return event;
     }
 
     public void init(String eventId, Context context){
@@ -101,7 +94,16 @@ public class CreateEventViewModel extends AndroidViewModel {
                     @Override
                     public void onResponse(Call<Event> call, Response<Event> response) {
                         if (response.isSuccessful()){
-                            event.postValue(response.body());
+                            Event event = response.body();
+                            costs = event.mode.costs;
+                            time = event.mode.time;
+                            if (event.additionalMode!=null){
+                                costs+=event.additionalMode.costs;
+                                time+=event.additionalMode.time;
+                            }
+                            finalCosts.postValue(costs);
+                            finalTime.postValue(time);
+                            leftBonuses.postValue(0);
                             status.postValue(Status.SUCCESS);
                         }
                     }

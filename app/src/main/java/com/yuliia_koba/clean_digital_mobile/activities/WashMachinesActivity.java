@@ -75,7 +75,6 @@ public class WashMachinesActivity extends AppCompatActivity {
 
         if (extras!=null){
             viewModel.setLaundryId(extras.getString(Laundry.LAUNDRY_ID, ""));
-            Log.v("ID", extras.getString(Laundry.LAUNDRY_ID));
         }
     }
 

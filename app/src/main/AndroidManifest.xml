@@ -20,6 +20,7 @@
         <activity
             android:name=".activities.CreateEventActivity"
             android:exported="false"
+            android:label="@string/pay_for_event"
             android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

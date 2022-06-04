@@ -19,6 +19,9 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.databinding.ActivityMainBinding;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
+import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.view_models.CreateEventViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (result!=null){
             String eventId = result.getContents();
-            Toast.makeText(this, eventId, Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, CreateEventActivity.class);
+            intent.putExtra(Event.EVENT_ID, eventId);
+            startActivity(intent);
         } else {
             Toast.makeText(this, "Ooops... You didn't scan anything", Toast.LENGTH_SHORT).show();
         }

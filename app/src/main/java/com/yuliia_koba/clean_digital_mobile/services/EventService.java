@@ -36,7 +36,7 @@ public interface EventService {
             @Body RateEventRequest body,
             @Header("Authorization") String token);
 
-    @POST("/event/by-id/{eventId}")
+    @GET("/event/by-id/{eventId}")
     Call<Event> getEvent(
             @Path("eventId") String eventId,
             @Header("Authorization") String token);

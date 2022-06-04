@@ -3,7 +3,9 @@ package com.yuliia_koba.clean_digital_mobile.models.dto;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class Event implements Comparable<Event>{
+public class Event{
+    static public final String EVENT_ID = "EVENT_ID";
+
     public final String eventId;
     public final String washMachineId;
     public final Integer temperature;
@@ -47,8 +49,4 @@ public class Event implements Comparable<Event>{
         this.rating = rating;
     }
 
-    @Override
-    public int compareTo(Event event) {
-        return timeBegin.compareTo(event.timeBegin);
-    }
 }
