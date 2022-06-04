@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Clean_Digital_Mobile"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".activities.UpdatePasswordActivity"
             android:exported="false"
@@ -91,9 +92,19 @@
             android:name=".activities.LoginActivity"
             android:exported="false" />
 
+        <service android:name=".services.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
+
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
+
+
     </application>
 
 </manifest>

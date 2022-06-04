@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "300391850941",
+    "project_id": "clean-digital",
+    "storage_bucket": "clean-digital.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300391850941:android:e7cbe3ac37669b00dca8d4",
+        "android_client_info": {
+          "package_name": "com.yuliia_koba.clean_digital_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300391850941-i3hiddmc3hlgp6immol1a0i8s1v6foqc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yuliia_koba.clean_digital_mobile",
+            "certificate_hash": "81184755cff0ef84db1325646c4d1ab895eda1c0"
+          }
+        },
+        {
+          "client_id": "300391850941-l5eql1dgg8gf63ph0dsdh64bfaostpsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABRlfjZuhHbnXMS5pfrWQ5-sloq9dqmxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300391850941-l5eql1dgg8gf63ph0dsdh64bfaostpsq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

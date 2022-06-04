@@ -9,8 +9,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
-
-import java.time.Instant;
+import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.Date;
 
 public class SplashActivity extends AppCompatActivity {
@@ -21,6 +20,9 @@ public class SplashActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        FirebaseMessaging firebaseMessaging = FirebaseMessaging.getInstance();
+        firebaseMessaging.subscribeToTopic("new_user_forums");
 
         navigate();
 
