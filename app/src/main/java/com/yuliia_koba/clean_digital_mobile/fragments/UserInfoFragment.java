@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.activities.EditClientActivity;
+import com.yuliia_koba.clean_digital_mobile.activities.UpdatePasswordActivity;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Client;
 import com.yuliia_koba.clean_digital_mobile.view_models.EventsViewModel;
@@ -81,12 +82,7 @@ public class UserInfoFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        editPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-
+        editPassword.setOnClickListener(view -> startActivity(new Intent(getActivity(), UpdatePasswordActivity.class)));
         editUser.setOnClickListener(view -> startActivity(new Intent(getActivity(), EditClientActivity.class)));
 
     }

@@ -18,10 +18,19 @@
         android:theme="@style/Theme.Clean_Digital_Mobile"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.UpdatePasswordActivity"
+            android:exported="false"
+            android:label="@string/update_password"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".activities.EditClientActivity"
             android:exported="false"
             android:label="@string/edit_info"
-            android:parentActivityName=".activities.MainActivity" >
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />

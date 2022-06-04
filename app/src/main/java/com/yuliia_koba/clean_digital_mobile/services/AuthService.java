@@ -1,5 +1,6 @@
 package com.yuliia_koba.clean_digital_mobile.services;
 
+import com.yuliia_koba.clean_digital_mobile.models.api.UpdatePasswordRequest;
 import com.yuliia_koba.clean_digital_mobile.models.dto.AuthMeta;
 import com.yuliia_koba.clean_digital_mobile.models.api.LoginRequest;
 import com.yuliia_koba.clean_digital_mobile.models.api.RegisterRequest;
@@ -7,6 +8,8 @@ import com.yuliia_koba.clean_digital_mobile.models.api.RestorePasswordRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 public interface AuthService {
@@ -18,4 +21,8 @@ public interface AuthService {
 
     @POST("/auth/signup-client")
     Call<Void> register(@Body RegisterRequest request);
+
+    @PATCH("/auth/update-password")
+    Call<Void> updatePassword(@Body UpdatePasswordRequest request,
+                              @Header("Authorization") String token);
 }
