@@ -60,4 +60,7 @@
     <string name="time">Time</string>
     <string name="bonuses">Bonuses</string>
     <string name="left_bonuses">Left bonuses</string>
+    <string name="sale">Sale</string>
+    <string name="edit">Edit</string>
+    <string name="update_password">Update password</string>
 </resources>
