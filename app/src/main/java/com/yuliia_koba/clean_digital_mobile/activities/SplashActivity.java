@@ -27,15 +27,19 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     void navigate (){
-        DecodedJWT jwt = JWT.decode(PreferencesService.getToken());
-        if( jwt.getExpiresAt().before(new Date())) {
+        if (PreferencesService.getToken().isEmpty()){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         } else {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            DecodedJWT jwt = JWT.decode(PreferencesService.getToken());
+            if( jwt.getExpiresAt().before(new Date())) {
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
         }
-
         finish();
     }
 }

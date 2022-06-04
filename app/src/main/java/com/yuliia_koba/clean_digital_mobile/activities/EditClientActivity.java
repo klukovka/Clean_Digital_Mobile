@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Client;
+import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
+import com.yuliia_koba.clean_digital_mobile.utils.Utils;
 import com.yuliia_koba.clean_digital_mobile.view_models.EditClientViewModel;
 import com.yuliia_koba.clean_digital_mobile.view_models.RegisterViewModel;
 
@@ -30,6 +32,7 @@ public class EditClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_client);
+        Utils.setLocale(this, PreferencesService.getLocale());
         viewModel = ViewModelProviders.of(this).get(EditClientViewModel.class);
 
         email = findViewById(R.id.email_update);

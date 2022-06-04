@@ -21,6 +21,8 @@ import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.databinding.ActivityMainBinding;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Event;
 import com.yuliia_koba.clean_digital_mobile.models.dto.Laundry;
+import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
+import com.yuliia_koba.clean_digital_mobile.utils.Utils;
 import com.yuliia_koba.clean_digital_mobile.view_models.CreateEventViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.setLocale(this, PreferencesService.getLocale());
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

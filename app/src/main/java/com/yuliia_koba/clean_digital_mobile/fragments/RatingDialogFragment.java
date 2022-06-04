@@ -40,25 +40,6 @@ public class RatingDialogFragment extends DialogFragment {
         cancel = view.findViewById(R.id.cancel_rating);
         send = view.findViewById(R.id.send_rating);
 
-        ratingRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
-                int id = radioGroup.getCheckedRadioButtonId();
-
-                if (R.id.oneMark == id){
-                    mark = 1;
-                } else if (R.id.twoMark == id){
-                    mark = 2;
-                } else if (R.id.threeMark == id){
-                    mark = 3;
-                } else if (R.id.fourMark == id){
-                    mark = 4;
-                } else if (R.id.fiveMark == id){
-                    mark = 5;
-                }
-            }
-        });
 
         return view;
     }
@@ -67,6 +48,24 @@ public class RatingDialogFragment extends DialogFragment {
     @Override
     public void onStart() {
         super.onStart();
+
+
+        ratingRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+
+            int id = radioGroup.getCheckedRadioButtonId();
+
+            if (R.id.oneMark == id){
+                mark = 1;
+            } else if (R.id.twoMark == id){
+                mark = 2;
+            } else if (R.id.threeMark == id){
+                mark = 3;
+            } else if (R.id.fourMark == id){
+                mark = 4;
+            } else if (R.id.fiveMark == id){
+                mark = 5;
+            }
+        });
 
         cancel.setOnClickListener(view -> dismiss());
 

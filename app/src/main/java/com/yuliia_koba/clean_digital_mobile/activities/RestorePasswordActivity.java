@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.yuliia_koba.clean_digital_mobile.R;
 import com.yuliia_koba.clean_digital_mobile.models.Status;
+import com.yuliia_koba.clean_digital_mobile.services.PreferencesService;
+import com.yuliia_koba.clean_digital_mobile.utils.Utils;
 import com.yuliia_koba.clean_digital_mobile.view_models.RestorePasswordViewModel;
 
 import java.util.Objects;
@@ -28,6 +30,7 @@ public class RestorePasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.setLocale(this, PreferencesService.getLocale());
         setContentView(R.layout.activity_restore_password);
 
 

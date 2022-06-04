@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CleanDigital</string>
-    <string name="email">Елеутронна пошта</string>
+    <string name="email">Електронна пошта</string>
     <string name="password">Пароль</string>
     <string name="login">Увійти</string>
     <string name="forget_password">Забули проль?</string>

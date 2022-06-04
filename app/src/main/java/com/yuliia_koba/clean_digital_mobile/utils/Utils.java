@@ -1,5 +1,8 @@
 package com.yuliia_koba.clean_digital_mobile.utils;
 
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Utils {
     public static <T> T[] concat(T[] a, T[] b) {
@@ -35,5 +39,14 @@ public class Utils {
                 .toLocalDateTime();
 
         return Math.toIntExact(ChronoUnit.MINUTES.between(converted, now));
+    }
+
+    public static void setLocale(Activity activity, String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 }
