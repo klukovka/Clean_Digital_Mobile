@@ -44,8 +44,6 @@
     <string name="rate">Rate</string>
     <string name="paid">Paid</string>
     <string name="not_paid">Not paid</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mark_the_process">Mark the process</string>
     <string name="_1_horrible">1 (Horrible)</string>
     <string name="_2_bad">2 (Bad)</string>
@@ -67,4 +65,9 @@
     <string name="edit_info">Edit info</string>
     <string name="old_password">Old password</string>
     <string name="new_password">New password</string>
+    <string name="exit">Exit</string>
+    <string name="delete_account">Delete account</string>
+    <string name="Language" >Language</string>
+    <string name="english">English</string>
+    <string name="ukrainian">Ukrainian</string>
 </resources>
